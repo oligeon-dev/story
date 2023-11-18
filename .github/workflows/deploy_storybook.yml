@@ -17,7 +17,7 @@ jobs:
       - id:
           check
           # If the comment contains the string deploy-storybook and pull_requrest, then run
-        if: "contains(github.event.comment.body, 'deploy-storybook') && github.event.issue.pull_request"
+        # if: "contains(github.event.comment.body, 'deploy-storybook') && github.event.issue.pull_request"
         run: |
           branch=`curl -X GET -H "Authorization: token ${GITHUB_TOKEN}" ${API_ENDPOINT} | jq -r '.head.ref'`
           echo ::set-output name=branch::$branch
