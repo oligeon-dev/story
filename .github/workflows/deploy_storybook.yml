@@ -1,8 +1,9 @@
 name: StoryBook Deploy S3[pull_request]
 
 on:
-  issue_comment:
-    types: [created]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
